@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectRail from '../components/ProjectRail';
+import ProjectCard from '../components/ProjectCard.astro';
+import { roles, site } from '../data/site';
+
+const entries = (await getCollection('projects')).sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
+const railProjects = entries.map(({ id, data }) => ({
+  slug: id,
+  title: data.title,
+  summary: data.summary,
+  status: data.status,
+  platform: data.platform,
+  hero: data.hero,
+  heroAlt: data.heroAlt,
+  accent: data.accent,
+  evidence: data.evidence
+}));
+---
+<BaseLayout pageName="Index">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="hero-wordmark" aria-label="Yaze Media">Yaze<br />Media</p>
+      <div class="hero-thesis">
+        <h1>Practical AI products, designed and shipped.</h1>
+        <p>Yaze Media is the product studio of Kirsten Trimaley — a graphic designer turned AI product developer building useful Windows and web tools.</p>
+        <div class="hero-actions">
+          <a class="button" href="#selected-work">View the work <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href={`mailto:${site.email}?subject=Remote%20opportunity%20for%20Kirsten%20Trimaley`}>Discuss a remote role</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-proof" aria-label="Yaze Media working principles">
+      <div class="proof-topline"><span>Proof sheet / 2026</span><span>East London → Remote</span></div>
+      <div class="proof-orbit" aria-hidden="true">
+        <span class="proof-axis proof-axis--x"></span>
+        <span class="proof-axis proof-axis--y"></span>
+        <span class="proof-core">Design<br />Build<br />Verify<br />Ship</span>
+        <p class="proof-note proof-note--a">Real workflows.<br />Local-first systems.</p>
+        <p class="proof-note proof-note--b">Evidence over<br />empty claims.</p>
+      </div>
+      <div class="proof-bottomline"><span>04 products / 01 practice</span><span>AI-assisted · human-directed</span></div>
+    </div>
+  </section>
+
+  <div class="availability-strip page-shell" aria-label="Role availability">
+    {roles.slice(0, 3).map((role) => <p>{role}</p>)}
+    <p>Available for remote work</p>
+  </div>
+
+  <section class="section-pad page-shell intro-grid">
+    <h2>Design became the way in. Shipping became the proof.</h2>
+    <div class="intro-copy">
+      <p>I bring a decade of graphic-design judgment into product work: understanding the messy real workflow, shaping the interface, building with AI-assisted development, and testing the result until it is ready to use.</p>
+      <p>I am still learning in public. The claim is not that AI makes the work effortless. The evidence is that disciplined direction, product boundaries, and verification can turn ideas into useful software.</p>
+      <ol class="manifesto-list">
+        <li><span>01</span><strong>Start with the operator’s real problem.</strong></li>
+        <li><span>02</span><strong>Protect the parts that already work.</strong></li>
+        <li><span>03</span><strong>Make privacy and failure states visible.</strong></li>
+        <li><span>04</span><strong>Publish only what the evidence supports.</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="selected-work" class="page-shell">
+    <div class="work-heading">
+      <h2>Selected work</h2>
+      <p>Four real products · open each proof</p>
+    </div>
+    <ProjectRail projects={railProjects} client:visible />
+  </section>
+
+  <section class="page-shell project-grid" aria-label="All featured projects">
+    {entries.map((entry, index) => <ProjectCard slug={entry.id} data={entry.data} index={index + 1} />)}
+  </section>
+
+  <section class="page-shell founder-panel">
+    <div class="founder-visual">
+      <img src="/images/brand/yazekt-avatar.jpg" alt="The YazeKT brand avatar, a dark futuristic figure with a glowing Y-shaped visor and a digital drawing stylus" width="1500" height="1500" loading="lazy" />
+    </div>
+    <div class="founder-copy">
+      <h2>One studio. One accountable builder.</h2>
+      <div>
+        <p>I’m Kirsten Trimaley, the designer and emerging developer behind Yaze Media.</p>
+        <p>I work where visual systems, practical software, and agentic development meet. I care about compact tools, clear boundaries, local-first thinking, and proof that survives the handoff.</p>
+        <a class="text-link" href="/about/">Read my story <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

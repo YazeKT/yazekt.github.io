@@ -1,0 +1,39 @@
+{
+  "name": "yaze-media-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "check": "astro check",
+    "assets:build": "node scripts/generate-assets.mjs",
+    "resume:build": "python scripts/build-resume.py",
+    "test:content": "node scripts/validate-content.mjs",
+    "build": "astro build",
+    "test:dist": "node scripts/validate-dist.mjs",
+    "verify": "npm run check && npm run test:content && npm run build && npm run test:dist",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "6.0.5",
+    "@astrojs/sitemap": "3.7.4",
+    "@fontsource-variable/archivo": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "astro": "7.3.2",
+    "motion": "13.3.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "lighthouse": "^13.4.1",
+    "sharp": "0.35.4",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

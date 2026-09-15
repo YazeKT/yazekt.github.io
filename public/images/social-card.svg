@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F3EFE7"/>
+  <path d="M35 35h1130M35 595h1130M70 20v30M55 35h30M1145 20v30M1130 35h30" stroke="#101113"/>
+  <rect x="760" y="70" width="405" height="490" fill="#101113"/>
+  <circle cx="962" cy="315" r="138" fill="none" stroke="#F3EFE7" stroke-opacity=".38"/>
+  <circle cx="962" cy="315" r="74" fill="#2454FF"/>
+  <path d="M790 315h345M962 100v430" stroke="#F3EFE7" stroke-opacity=".3"/>
+  <text x="65" y="175" fill="#101113" font-family="Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-7">YAZE</text>
+  <text x="65" y="272" fill="#101113" font-family="Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-7">MEDIA</text>
+  <text x="70" y="370" fill="#101113" font-family="Arial, sans-serif" font-size="45">Practical AI products,</text>
+  <text x="70" y="423" fill="#101113" font-family="Arial, sans-serif" font-size="45">designed and shipped.</text>
+  <text x="70" y="510" fill="#313238" font-family="monospace" font-size="20" letter-spacing="2">KIRSTEN TRIMALEY / AI PRODUCT DEVELOPER</text>
+  <rect x="70" y="548" width="210" height="12" fill="#FF5A36"/>
+</svg>
+

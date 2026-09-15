@@ -1,0 +1,19 @@
+---
+import { site } from '../data/site';
+---
+<footer class="site-footer" id="contact">
+  <div class="footer-statement">
+    <p>Have a practical problem worth shaping?</p>
+    <h2>Let’s build the useful version.</h2>
+  </div>
+  <div class="footer-contact">
+    <a class="button button-light" href={`mailto:${site.email}?subject=Remote%20opportunity%20for%20Kirsten%20Trimaley`}>Email Kirsten</a>
+    <a class="text-link light" href={site.github} rel="me">GitHub profile</a>
+  </div>
+  <div class="footer-meta">
+    <p>Yaze Media © {new Date().getFullYear()}</p>
+    <p>{site.location}</p>
+    <p>No tracking. No cookies. No chatbot.</p>
+  </div>
+</footer>
+

@@ -1,0 +1,11 @@
+{
+  "name": "Yaze Media",
+  "short_name": "Yaze Media",
+  "description": "Practical AI products, designed and shipped by Kirsten Trimaley.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3EFE7",
+  "theme_color": "#F3EFE7",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
+

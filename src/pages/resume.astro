@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { roles, site } from '../data/site';
+import resume from '../data/resume.json';
+---
+<BaseLayout title="Resume — Kirsten Trimaley" description="Resume for Kirsten Trimaley, founder of Yaze Media and an AI product developer with a graphic-design background." pageName="Resume">
+  <section class="page-hero page-shell">
+    <h1>Kirsten Trimaley</h1>
+    <p>{resume.title} building practical Windows and web tools through Yaze Media.</p>
+    <div class="hero-actions resume-actions">
+      <a class="button" href="/resume/kirsten-trimaley-resume.pdf">Download PDF <span aria-hidden="true">↓</span></a>
+      <a class="button button-secondary" href={`mailto:${site.email}`}>Email Kirsten</a>
+    </div>
+  </section>
+  <div class="page-shell resume-grid">
+    <aside class="resume-side">
+      <div><strong>Contact</strong><p><a href={`mailto:${site.email}`}>{site.email}</a><br /><a href={site.github}>github.com/YazeKT</a><br />{site.location}</p></div>
+      <div><strong>Role focus</strong><ul>{roles.map((role) => <li>{role}</li>)}</ul></div>
+      <div><strong>Core tools</strong><p>{resume.tools.join(' · ')}</p></div>
+    </aside>
+    <div class="resume-main">
+      <section class="resume-section">
+        <h2>Profile</h2>
+        <p>{resume.summary}</p>
+      </section>
+      <section class="resume-section">
+        <h2>Selected product work</h2>
+        {resume.projects.map((project) => <article class="resume-entry"><time>{project.year}</time><div><h3>{project.name}</h3><p>{project.description}</p></div></article>)}
+      </section>
+      <section class="resume-section">
+        <h2>Strengths</h2>
+        <p>{resume.strengths.join(' · ')}</p>
+      </section>
+      <section class="resume-section">
+        <h2>Working approach</h2>
+        <p>{resume.approach}</p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

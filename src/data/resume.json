@@ -1,0 +1,15 @@
+{
+  "name": "Kirsten Trimaley",
+  "title": "AI product developer and graphic designer",
+  "summary": "Graphic designer with approximately ten years of experience, now working as an emerging AI product developer. Combines visual systems, workflow analysis, AI-assisted implementation, testing, packaging, and privacy-safe publication.",
+  "tools": ["Astro", "React", "TypeScript", "Electron", "Node.js", "Go", "Playwright", "SQLite", "GitHub Actions", "AI coding agents"],
+  "strengths": ["Product and interface design", "Agentic coding direction", "Local-first Windows products", "Responsive web development", "Release documentation", "Accessibility and privacy boundaries", "Evidence-led QA"],
+  "projects": [
+    { "year": "2026", "name": "dlME", "description": "Product design, Electron development, resilient public-media recovery, packaging, verification, and open-beta publication." },
+    { "year": "2026", "name": "Nestform", "description": "Modernized a Windows nesting workflow while preserving the upstream Deepnest engine and validating physical SVG/DXF unit boundaries." },
+    { "year": "2026", "name": "Atlas Reach", "description": "Built a compact local-first CRM with spreadsheet imports, dense lead management, analytics, Excel exports, backups, and a strict no-scraper boundary." },
+    { "year": "2026", "name": "PinHarbor", "description": "Designed and integrated a completion-driven Windows workflow, honest live progress, focused exports, and supervised Go/Playwright startup around an attributed open-source foundation." }
+  ],
+  "approach": "Understand the operator, protect proven behavior, make boundaries visible, validate the real package, and publish only what the evidence supports."
+}
+

@@ -1,0 +1,33 @@
+---
+interface Props {
+  slug: string;
+  data: {
+    title: string;
+    summary: string;
+    platform: string;
+    status: string;
+    hero: string;
+    heroAlt: string;
+    accent: 'cobalt' | 'orange';
+    stack: string[];
+  };
+  index: number;
+}
+const { slug, data, index } = Astro.props;
+---
+<article class={`project-card project-card--${data.accent}`}>
+  <a class="project-card__image" href={`/work/${slug}/`} aria-label={`Read the ${data.title} case study`}>
+    <img src={data.hero} alt={data.heroAlt} loading="lazy" width="1400" height="900" />
+  </a>
+  <div class="project-card__meta">
+    <span>{String(index).padStart(2, '0')}</span>
+    <span>{data.platform}</span>
+    <span>{data.status}</span>
+  </div>
+  <h2><a href={`/work/${slug}/`}>{data.title}</a></h2>
+  <p>{data.summary}</p>
+  <ul class="tag-list" aria-label={`${data.title} technology`}>
+    {data.stack.slice(0, 4).map((item) => <li>{item}</li>)}
+  </ul>
+</article>
+

@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { data } = project;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: data.title,
+  description: data.summary,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: data.platform,
+  author: { '@type': 'Person', name: site.creator },
+  publisher: { '@type': 'Organization', name: site.name },
+  url: new URL(`/work/${project.id}/`, site.url).href,
+  codeRepository: data.repository
+};
+---
+<BaseLayout title={`${data.title} case study — Yaze Media`} description={data.summary} image={data.hero} pageName={data.title} schema={schema}>
+  <article class="page-shell">
+    <header class="case-hero">
+      <div class="case-hero__image"><img src={data.hero} alt={data.heroAlt} width="1400" height="900" /></div>
+      <div class="case-hero__summary">
+        <div>
+          <p class="status">{data.platform} · {data.status}</p>
+          <h1>{data.title}</h1>
+          <p class="outcome">{data.outcome}</p>
+        </div>
+        <div class="link-row">
+          <a class="text-link" href={data.repository}>Repository ↗</a>
+          {data.live && <a class="text-link" href={data.live}>Product site ↗</a>}
+          {data.release && <a class="text-link" href={data.release}>Release ↗</a>}
+        </div>
+      </div>
+    </header>
+
+    <dl class="evidence-grid">
+      {data.evidence.slice(0, 3).map((item) => (
+        <div class="evidence-item">
+          <dt>{item.label}</dt>
+          <dd>{item.url ? <a href={item.url}>{item.value}</a> : item.value}</dd>
+          {item.note && <small>{item.note}</small>}
+        </div>
+      ))}
+    </dl>
+
+    <div class="case-body">
+      <aside class="case-aside">
+        <dl>
+          <dt>Role</dt><dd>{data.role}</dd>
+          <dt>Platform</dt><dd>{data.platform}</dd>
+          <dt>Tools</dt><dd>{data.stack.join(' · ')}</dd>
+          <dt>Status</dt><dd>{data.status}</dd>
+        </dl>
+      </aside>
+      <div class="case-content">
+        <section class="case-section">
+          <h2>The problem</h2>
+          <div><p>{data.summary}</p><p>{data.outcome}</p></div>
+        </section>
+        <section class="case-section">
+          <h2>My contribution</h2>
+          <ul>{data.contribution.map((item) => <li>{item}</li>)}</ul>
+        </section>
+        <section class="case-section">
+          <h2>Constraints</h2>
+          <ul>{data.constraints.map((item) => <li>{item}</li>)}</ul>
+        </section>
+        <figure class="case-image">
+          <img src={data.secondaryImage} alt={data.secondaryAlt} width="1400" height="900" loading="lazy" />
+          <figcaption>Product evidence / privacy-safe interface capture</figcaption>
+        </figure>
+        <section class="case-section">
+          <h2>Decisions</h2>
+          <ul>{data.decisions.map((item) => <li>{item}</li>)}</ul>
+        </section>
+        <section class="case-section">
+          <h2>What shipped</h2>
+          <ul>{data.results.map((item) => <li>{item}</li>)}</ul>
+        </section>
+        {data.attribution && <p class="attribution"><strong>Attribution:</strong> {data.attribution}</p>}
+        <section class="case-section">
+          <h2>Next</h2>
+          <div><p>{data.next}</p><a class="button" href={`mailto:${site.email}?subject=${encodeURIComponent(`Remote opportunity after viewing ${data.title}`)}`}>Talk about this work <span aria-hidden="true">↗</span></a></div>
+        </section>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+

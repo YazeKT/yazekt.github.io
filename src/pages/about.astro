@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="About Kirsten Trimaley — Yaze Media" description="Kirsten Trimaley is a graphic designer turned AI product developer building practical Windows and web products through Yaze Media." pageName="About">
+  <section class="page-hero page-shell">
+    <h1>Designer’s eye. Builder’s discipline.</h1>
+    <p>I’m Kirsten Trimaley, the person behind Yaze Media. I turn real workflow friction into products people can understand and use.</p>
+    <div class="page-meta"><span>{site.location}</span><span>Available for remote roles</span><span>AI-assisted · human-directed</span></div>
+  </section>
+  <section class="page-shell about-grid">
+    <div class="about-avatar"><img src="/images/brand/yazekt-avatar.jpg" alt="The YazeKT brand avatar, a dark futuristic figure with a glowing Y-shaped visor and a digital drawing stylus" width="1500" height="1500" /></div>
+    <div class="about-story">
+      <h2>The move into development was not a reset.</h2>
+      <p>It was a continuation of roughly ten years spent making complex information legible, useful, and visually coherent.</p>
+      <p>Graphic design taught me to see hierarchy, constraints, production details, and the difference between something that merely looks finished and something that is ready to use. AI-assisted development gave me a way to carry that thinking into working software.</p>
+      <p>I direct the product, interrogate the output, preserve proven foundations, test the real boundary, and document what shipped. I am still growing technically, and I prefer evidence over pretending otherwise.</p>
+      <p>The work I want next sits where product judgment, interfaces, practical automation, and agentic coding meet.</p>
+      <div class="hero-actions">
+        <a class="button" href="/work/">Inspect the work <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href={`mailto:${site.email}?subject=Remote%20opportunity%20for%20Kirsten%20Trimaley`}>Email me</a>
+      </div>
+    </div>
+  </section>
+  <section class="page-shell section-pad">
+    <div class="work-heading"><h2>How I work</h2><p>Four durable principles</p></div>
+    <div class="principle-grid">
+      <article class="principle"><span>01 / Context</span><h3>Start with the real operator.</h3><p>Understand the environment, the data, and the failure costs before choosing the interface.</p></article>
+      <article class="principle"><span>02 / Boundary</span><h3>Protect what already works.</h3><p>Modernize around proven engines and workflows instead of replacing them for novelty.</p></article>
+      <article class="principle"><span>03 / Evidence</span><h3>Test the actual handoff.</h3><p>A green build is not enough. Launchers, files, packages, routes, and public claims need proof.</p></article>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,6 @@
+Use case: ui-mockup
+Asset type: high-fidelity desktop homepage composition reference for the Yaze Media official portfolio
+Primary request: design a memorable editorial portfolio homepage titled YAZE MEDIA for Kirsten Trimaley, an AI product developer and graphic designer. The page must feel like a premium proof sheet from a working design-and-software studio, not a generic agency template.
+Palette: #F3EFE7, #101113, #2454FF, #FF5A36, #A49F94.
+Required text: YAZE MEDIA; Practical AI products, designed and shipped.; Kirsten Trimaley - AI product developer; View the work; dlME; Nestform; Atlas Reach; PinHarbor.
+Constraints: no invented UI details, clients, metrics, testimonials, unverified work, purple gradients, glassmorphism, floating 3D shapes, generic AI imagery, neon cyberpunk, or watermark.

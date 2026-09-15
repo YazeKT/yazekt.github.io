@@ -1,0 +1,27 @@
+---
+interface Props { pageName: string; }
+const { pageName } = Astro.props;
+const path = Astro.url.pathname;
+const links = [
+  { href: '/work/', label: 'Work' },
+  { href: '/about/', label: 'About' },
+  { href: '/resume/', label: 'Resume' },
+  { href: '/#contact', label: 'Contact' }
+];
+const active = (href: string) => href !== '/#contact' && path.startsWith(href);
+---
+<header class="site-header">
+  <div class="registration-mark" aria-hidden="true"><span></span><span></span></div>
+  <a class="brand-lockup" href="/" aria-label="Yaze Media home">
+    <span class="brand-mark">YM</span>
+    <span>Yaze Media</span>
+  </a>
+  <p class="header-founder">Kirsten Trimaley <span>— AI product developer</span></p>
+  <p class="header-page" aria-label={`Current page: ${pageName}`}>{pageName}</p>
+  <nav aria-label="Main navigation">
+    {links.map((link) => (
+      <a href={link.href} aria-current={active(link.href) ? 'page' : undefined}>{link.label}</a>
+    ))}
+  </nav>
+</header>
+
