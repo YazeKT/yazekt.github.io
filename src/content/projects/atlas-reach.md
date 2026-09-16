@@ -4,13 +4,20 @@ summary: "A compact, local-first lead CRM for importing approved spreadsheets, m
 outcome: "A dense Windows workspace with duplicate-aware imports, lead editing, local analytics, pagination, exports, and backups."
 status: "v1.3.0 public release"
 role: "Product design, JavaScript development, privacy boundaries, release engineering"
+signature: "Product direction, interface, implementation, privacy boundaries, and release verification by Kirsten Trimaley."
 platform: "Windows local web app"
 stack: ["Node.js", "JavaScript", "SQLite", "SheetJS", "Edge"]
 featuredOrder: 3
+art: "/images/art/atlas-record-terraces.webp"
+artAlt: "Orderly record terraces connected by a cobalt import and export river in a carved-paper landscape"
 hero: "/images/projects/atlas-drawer.png"
 heroAlt: "Atlas Reach dark interface showing the lead table and a detailed right-side lead editor using synthetic test data"
+heroWidth: 1024
+heroHeight: 1024
 secondaryImage: "/images/projects/atlas-leads.png"
 secondaryAlt: "Atlas Reach light interface showing the dense paginated lead workspace populated with synthetic sample leads"
+secondaryWidth: 1024
+secondaryHeight: 768
 accent: "cobalt"
 repository: "https://github.com/YazeKT/Atlas-Reach"
 release: "https://github.com/YazeKT/Atlas-Reach/releases/tag/v1.3.0"
@@ -36,4 +43,3 @@ evidence:
   - label: "Visual proof"
     value: "4 isolated Edge states"
 ---
-

@@ -4,13 +4,20 @@ summary: "A Windows-local Google Maps business collector with completion-driven 
 outcome: "A Docker-free Go and Playwright workflow with clearer presets, resilient supervision, local job history, and truthful telemetry."
 status: "Public source"
 role: "Product design, Go workflow integration, progress telemetry, Windows launcher, documentation"
+signature: "Product direction, interface, workflow integration, telemetry, and verification by Kirsten Trimaley; built on the attributed upstream foundation."
 platform: "Windows local web app"
 stack: ["Go", "Playwright", "HTMX", "SQLite", "CSV"]
 featuredOrder: 4
+art: "/images/art/pinharbor-local-current.webp"
+artAlt: "A cobalt local current connects abstract places to an organized harbor across a carved-paper street landscape"
 hero: "/images/projects/pinharbor-dark.png"
 heroAlt: "PinHarbor dark interface showing the new-collection form and realtime collection monitor with local status indicators"
+heroWidth: 1440
+heroHeight: 900
 secondaryImage: "/images/projects/pinharbor-light.png"
 secondaryAlt: "PinHarbor light interface showing the collection form, presets, optional settings, and realtime activity workspace"
+secondaryWidth: 1440
+secondaryHeight: 900
 accent: "orange"
 repository: "https://github.com/YazeKT/PinHarbor"
 contribution:
@@ -35,4 +42,3 @@ evidence:
     value: "Supervisor restart verified"
 attribution: "PinHarbor retains the MIT license and attribution for the gosom/google-maps-scraper project it builds on."
 ---
-

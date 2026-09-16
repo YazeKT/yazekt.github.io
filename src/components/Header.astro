@@ -4,24 +4,21 @@ const { pageName } = Astro.props;
 const path = Astro.url.pathname;
 const links = [
   { href: '/work/', label: 'Work' },
+  { href: '/#process', label: 'Process' },
+  { href: '/roadmap/', label: 'Roadmap' },
   { href: '/about/', label: 'About' },
   { href: '/resume/', label: 'Resume' },
   { href: '/#contact', label: 'Contact' }
 ];
-const active = (href: string) => href !== '/#contact' && path.startsWith(href);
+const active = (href: string) => href.endsWith('/') && path.startsWith(href);
 ---
-<header class="site-header">
-  <div class="registration-mark" aria-hidden="true"><span></span><span></span></div>
+<header class="site-header" data-theme="dark">
   <a class="brand-lockup" href="/" aria-label="Yaze Media home">
-    <span class="brand-mark">YM</span>
+    <img src="/favicon.svg" width="34" height="34" alt="" />
     <span>Yaze Media</span>
   </a>
-  <p class="header-founder">Kirsten Trimaley <span>— AI product developer</span></p>
-  <p class="header-page" aria-label={`Current page: ${pageName}`}>{pageName}</p>
+  <p class="header-page">{pageName}</p>
   <nav aria-label="Main navigation">
-    {links.map((link) => (
-      <a href={link.href} aria-current={active(link.href) ? 'page' : undefined}>{link.label}</a>
-    ))}
+    {links.map((link) => <a href={link.href} aria-current={active(link.href) ? 'page' : undefined}>{link.label}</a>)}
   </nav>
 </header>
-

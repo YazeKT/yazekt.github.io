@@ -4,13 +4,20 @@ summary: "A local Windows media downloader that turns a pasted public-media URL 
 outcome: "A compact Electron product with resilient analysis, local files, explicit formats, and release-grade verification."
 status: "Public open beta"
 role: "Product design, Electron development, testing, packaging, publication"
+signature: "Product direction, interface, implementation, verification, and publication by Kirsten Trimaley."
 platform: "Windows desktop"
 stack: ["Electron", "React", "TypeScript", "yt-dlp", "FFmpeg"]
 featuredOrder: 1
+art: "/images/art/dlme-signal-river.webp"
+artAlt: "A carved-paper landscape where scattered media signals join a cobalt river and resolve into orderly local files"
 hero: "/images/projects/dlme-downloader.webp"
 heroAlt: "dlME dark desktop interface showing the downloader, files, history, supported sites, settings, and live log areas"
+heroWidth: 1120
+heroHeight: 760
 secondaryImage: "/images/projects/dlme-flow.webp"
 secondaryAlt: "dlME product flow showing media analysis, format selection, download progress, and verified local output"
+secondaryWidth: 1536
+secondaryHeight: 1024
 accent: "cobalt"
 repository: "https://github.com/YazeKT/dlME"
 live: "https://yazekt.github.io/dlME/"
@@ -26,7 +33,7 @@ decisions:
   - "Keep analysis, format choice, live logs, and saved files visible without turning the product into a dense developer console."
 results:
   - "The 0.9.1 prerelease includes a corresponding-source package and audited engine source parts."
-  - "Verification covered type checking, production build, 32 tests, packaged MP4 and MP3 flows, legal surfaces, and 1,752 supported extractors."
+  - "The verified 0.9.1 engine snapshot reported 1,752 supported extractors alongside type checking, production build, 32 tests, packaged MP4 and MP3 flows, and legal-surface checks."
 next: "Continue tightening signed-distribution readiness and keep upstream media-engine versions and source packages reproducible."
 evidence:
   - label: "Release"
@@ -38,4 +45,3 @@ evidence:
   - label: "Recovery"
     value: "Cookie-free retry for public media"
 ---
-

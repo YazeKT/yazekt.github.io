@@ -2,96 +2,56 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
-
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
   return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
 }
-
 const { project } = Astro.props;
 const { data } = project;
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: data.title,
-  description: data.summary,
-  applicationCategory: 'BusinessApplication',
-  operatingSystem: data.platform,
-  author: { '@type': 'Person', name: site.creator },
-  publisher: { '@type': 'Organization', name: site.name },
-  url: new URL(`/work/${project.id}/`, site.url).href,
-  codeRepository: data.repository
-};
+const pageUrl = new URL(`/work/${project.id}/`, site.url).href;
+const schema = [
+  { '@type': 'Article', '@id': `${pageUrl}#case-study`, headline: `${data.title} case study`, description: data.summary, author: { '@id': `${site.url}/#kirsten-trimaley` }, about: { '@id': `${pageUrl}#software` } },
+  { '@type': 'SoftwareApplication', '@id': `${pageUrl}#software`, name: data.title, description: data.summary, operatingSystem: data.platform, contributor: { '@id': `${site.url}/#kirsten-trimaley` }, isBasedOn: data.attribution || undefined },
+  { '@type': 'SoftwareSourceCode', name: `${data.title} source repository`, codeRepository: data.repository, about: { '@id': `${pageUrl}#software` } }
+];
 ---
-<BaseLayout title={`${data.title} case study — Yaze Media`} description={data.summary} image={data.hero} pageName={data.title} schema={schema}>
-  <article class="page-shell">
-    <header class="case-hero">
-      <div class="case-hero__image"><img src={data.hero} alt={data.heroAlt} width="1400" height="900" /></div>
-      <div class="case-hero__summary">
-        <div>
-          <p class="status">{data.platform} · {data.status}</p>
-          <h1>{data.title}</h1>
-          <p class="outcome">{data.outcome}</p>
-        </div>
-        <div class="link-row">
-          <a class="text-link" href={data.repository}>Repository ↗</a>
-          {data.live && <a class="text-link" href={data.live}>Product site ↗</a>}
-          {data.release && <a class="text-link" href={data.release}>Release ↗</a>}
-        </div>
+<BaseLayout title={`${data.title} case study — Yaze Media`} description={data.summary} image={`/images/social/${project.id}.webp`} imageAlt={`${data.title} case study by Kirsten Trimaley and Yaze Media`} pageName={data.title} schema={schema}>
+  <article>
+    <header class="case-opening">
+      <img class="case-opening__art" src={data.art} srcset={`${data.art.replace('.webp', '-800.webp')} 800w, ${data.art.replace('.webp', '-1600.webp')} 1600w, ${data.art} 3840w`} sizes="100vw" alt={data.artAlt} width="3840" height="2160" fetchpriority="high" />
+      <div class="case-opening__wash" aria-hidden="true"></div>
+      <div class="case-opening__copy">
+        <p class="mono">Case study {String(data.featuredOrder).padStart(2, '0')} / {data.platform}</p>
+        <h1>{data.title}</h1>
+        <p>{data.outcome}</p>
+        <p class="art-label">Conceptual artwork / product evidence follows</p>
+        <div class="link-row"><a class="button" href={data.repository}>View project repository <span aria-hidden="true">↗</span></a>{data.live && <a class="button button-secondary" href={data.live}>Visit product site</a>}{data.release && <a class="text-link" href={data.release}>Release ↗</a>}</div>
       </div>
     </header>
 
-    <dl class="evidence-grid">
-      {data.evidence.slice(0, 3).map((item) => (
-        <div class="evidence-item">
-          <dt>{item.label}</dt>
-          <dd>{item.url ? <a href={item.url}>{item.value}</a> : item.value}</dd>
-          {item.note && <small>{item.note}</small>}
-        </div>
-      ))}
-    </dl>
+    <section class="case-signature page-shell">
+      <img src="/images/brand/yazekt-avatar.jpg" alt="YazeKT brand avatar with a glowing Y visor" width="1254" height="1254" />
+      <div><p class="mono">{data.signature}</p><p>I use AI to explore and accelerate, but I own the product decisions, the verification, and the responsibility for what ships.</p></div>
+    </section>
 
-    <div class="case-body">
-      <aside class="case-aside">
-        <dl>
-          <dt>Role</dt><dd>{data.role}</dd>
-          <dt>Platform</dt><dd>{data.platform}</dd>
-          <dt>Tools</dt><dd>{data.stack.join(' · ')}</dd>
-          <dt>Status</dt><dd>{data.status}</dd>
-        </dl>
-      </aside>
+    <dl class="evidence-grid page-shell">{data.evidence.slice(0, 3).map((item) => <div class="evidence-item"><dt>{item.label}</dt><dd>{item.url ? <a href={item.url}>{item.value}</a> : item.value}</dd>{item.note && <small>{item.note}</small>}</div>)}</dl>
+
+    <section class="case-proof page-shell">
+      <div class="case-proof__copy"><p class="mono">The real product</p><h2>Built to be used,<br />not just viewed.</h2><p>{data.summary}</p><p class="image-note">Complete application frame · source aspect ratio preserved · privacy-safe data</p></div>
+      <figure class="screen-frame"><img src={data.hero} alt={data.heroAlt} width={data.heroWidth} height={data.heroHeight} /><figcaption>{data.title} interface evidence</figcaption></figure>
+    </section>
+
+    <div class="case-body page-shell">
+      <aside class="case-aside"><dl><dt>My role</dt><dd>{data.role}</dd><dt>Platform</dt><dd>{data.platform}</dd><dt>Status</dt><dd>{data.status}</dd><dt>Tools</dt><dd>{data.stack.join(' · ')}</dd></dl></aside>
       <div class="case-content">
-        <section class="case-section">
-          <h2>The problem</h2>
-          <div><p>{data.summary}</p><p>{data.outcome}</p></div>
-        </section>
-        <section class="case-section">
-          <h2>My contribution</h2>
-          <ul>{data.contribution.map((item) => <li>{item}</li>)}</ul>
-        </section>
-        <section class="case-section">
-          <h2>Constraints</h2>
-          <ul>{data.constraints.map((item) => <li>{item}</li>)}</ul>
-        </section>
-        <figure class="case-image">
-          <img src={data.secondaryImage} alt={data.secondaryAlt} width="1400" height="900" loading="lazy" />
-          <figcaption>Product evidence / privacy-safe interface capture</figcaption>
-        </figure>
-        <section class="case-section">
-          <h2>Decisions</h2>
-          <ul>{data.decisions.map((item) => <li>{item}</li>)}</ul>
-        </section>
-        <section class="case-section">
-          <h2>What shipped</h2>
-          <ul>{data.results.map((item) => <li>{item}</li>)}</ul>
-        </section>
-        {data.attribution && <p class="attribution"><strong>Attribution:</strong> {data.attribution}</p>}
-        <section class="case-section">
-          <h2>Next</h2>
-          <div><p>{data.next}</p><a class="button" href={`mailto:${site.email}?subject=${encodeURIComponent(`Remote opportunity after viewing ${data.title}`)}`}>Talk about this work <span aria-hidden="true">↗</span></a></div>
-        </section>
+        <section class="case-section"><h2>What I changed</h2><ul>{data.contribution.map((item) => <li>{item}</li>)}</ul></section>
+        <section class="case-section"><h2>Boundaries first</h2><ul>{data.constraints.map((item) => <li>{item}</li>)}</ul></section>
+        {data.secondaryImage !== data.hero && <figure class="case-image screen-frame"><img src={data.secondaryImage} alt={data.secondaryAlt} width={data.secondaryWidth} height={data.secondaryHeight} loading="lazy" /><figcaption>Verified interface capture / uncropped and unstretched</figcaption></figure>}
+        <section class="case-section"><h2>Decisions</h2><ul>{data.decisions.map((item) => <li>{item}</li>)}</ul></section>
+        <section class="case-section"><h2>Proof of work</h2><ul>{data.results.map((item) => <li>{item}</li>)}</ul></section>
+        {data.attribution && <p class="attribution"><strong>Foundation and attribution:</strong> {data.attribution}</p>}
+        <section class="case-section case-next"><h2>What comes next</h2><div><p>{data.next}</p><a class="button" href={`mailto:${site.email}?subject=${encodeURIComponent(`Remote opportunity after viewing ${data.title}`)}`}>Talk with me about this work <span aria-hidden="true">↗</span></a></div></section>
       </div>
     </div>
   </article>
 </BaseLayout>
-

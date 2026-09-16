@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Page not found — Yaze Media" description="The requested Yaze Media page could not be found." pageName="404">
+<BaseLayout title="Page not found — Yaze Media" description="The requested Yaze Media page could not be found." pageName="404" noindex={true}>
   <section class="not-found page-shell">
     <div><h1>404</h1><p>This proof is not on the sheet.</p><a class="button" href="/">Return home <span aria-hidden="true">↗</span></a></div>
   </section>
 </BaseLayout>
-

@@ -1,8 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import WorkIndex from '../../components/WorkIndex';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
+const items = projects.map(({ id, data }) => ({ slug: id, featuredOrder: data.featuredOrder, title: data.title, summary: data.summary, platform: data.platform, status: data.status, art: data.art, artAlt: data.artAlt, hero: data.hero, heroAlt: data.heroAlt, heroWidth: data.heroWidth, heroHeight: data.heroHeight }));
 ---
 <BaseLayout title="Work — Yaze Media" description="Case studies for dlME, Nestform, Atlas Reach, and PinHarbor by Yaze Media and Kirsten Trimaley." pageName="Work">
   <section class="page-hero page-shell">
@@ -10,8 +11,5 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.feature
     <p>Four practical products. Each case study separates the problem, the contribution, the inherited foundation, and the proof.</p>
     <div class="page-meta"><span>Windows + web</span><span>Design + development</span><span>Evidence-led</span></div>
   </section>
-  <section class="page-shell project-grid" aria-label="Project case studies">
-    {projects.map((entry, index) => <ProjectCard slug={entry.id} data={entry.data} index={index + 1} />)}
-  </section>
+  <div class="page-shell"><WorkIndex projects={items} client:visible /></div>
 </BaseLayout>
-

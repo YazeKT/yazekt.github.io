@@ -7,8 +7,7 @@ Production site: <https://yazekt.github.io/>
 ## Stack
 
 - Astro static site with strict TypeScript
-- React only for the enhanced project evidence rail
-- Motion for the rail transition
+- React only for progressive work-index filters; all projects remain visible without JavaScript
 - Self-hosted Archivo and IBM Plex Mono fonts
 - GitHub Actions and GitHub Pages
 
@@ -29,7 +28,9 @@ Run the complete local gate before committing:
 npm run verify
 ```
 
-The gate runs Astro type checking, validates the four project records and their assets, builds the static site, and inspects the final deployment artifact for required routes and excluded legacy content.
+The gate runs Astro type checking, validates the four project records and their assets, builds the static site, and inspects the final deployment artifact for required routes and excluded content.
+
+The generated artwork is illustrative and never substitutes for product evidence. Real app captures must remain uncropped, unstretched, privacy-safe, and at their source aspect ratio.
 
 ## Content
 
@@ -43,9 +44,8 @@ Never commit environment files, databases, imports, exports, browser profiles, c
 
 ## Deployment
 
-Pull requests and pushes run CI. The Pages workflow builds and deploys only from the protected `main` branch. Compiled `dist/` output is never committed.
+Pull requests and pushes run CI. The Pages workflow is intended to build and deploy only from `main`; branch protection and the Pages environment must be verified in GitHub before publication is called complete. Compiled `dist/` output is never committed.
 
 ## Rights
 
 The website source and original Yaze Media content are proprietary and all rights are reserved. Third-party project screenshots, fonts, packages, and inherited project foundations retain their own licenses and attribution. See `LICENSE.md` and `THIRD_PARTY_NOTICES.md`.
-

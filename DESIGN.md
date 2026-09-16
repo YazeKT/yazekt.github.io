@@ -1,8 +1,12 @@
 # Yaze Media Design System
 
+Status: **Locked for implementation — 15 September 2026**
+
 ## Direction
 
-**Proof of Work** treats the portfolio as a release contact sheet: the work is large, the evidence is legible, and every annotation carries a real fact. The system borrows the tonal discipline of a print proof emerging from a dark plate, but its structure comes from software releases, production marks, and interface captures.
+**The Yaze Product Atlas** treats Kirsten's body of work as one connected landscape. A text-led cinematic workshop opens the experience, then gives way to warm carved-paper terrain where a cobalt river connects products, decisions, evidence, current builds, and future intentions. The river may form a restrained Y-shaped junction inside editorial artwork, but it is never repeated as a large hero logo.
+
+The spectacle comes from original product-world artwork beside truthful proof. Every real application screenshot remains a direct, undistorted asset; generated artwork explains an idea, constraint, process, or outcome and is always visually distinguished from interface evidence.
 
 ## Palette
 
@@ -13,6 +17,8 @@
 - Cobalt: `#2454FF`
 - Signal orange: `#FF5A36`
 - Metal: `#A49F94`
+- Precision teal: `#21C7BD`
+- Rare horizon lime: `#B8FF3D` (under 5% of a composition)
 
 ## Typography
 
@@ -22,19 +28,21 @@
 
 ## Composition
 
-- A full-width registration rail frames the page and carries the brand, current route, availability, and section position.
-- The homepage first viewport pairs an oversized wordmark and thesis with a deep-black live proof containing the four projects.
-- Project images use large contact-sheet frames with factual captions; never place the whole site into repeated equal cards.
+- The homepage opens in a dark working studio with a single small Yaze Media mark in navigation, strong positioning copy, blueprints, tools, material samples, and no large hero character or second Y symbol.
+- The studio flows into a bright product atlas with sculpted terrain, miniature environments, and a cobalt river connecting dlME, Nestform, Atlas Reach, and PinHarbor.
+- Every case study uses its own river metaphor: Signal River, Material Delta, Record Terraces, or Local Current.
+- Dark evidence bands alternate with bright editorial terrain so real product interfaces receive maximum contrast and authority.
 - Content uses an asymmetric 12-column desktop grid and a direct single-column mobile sequence.
-- Rules, coordinates, and crop marks are structural: they align content, separate proof states, or mark real sequence.
+- Handwritten notes are short editorial annotations, never essential body content.
 
 ## Signature interaction
 
-The homepage project rail is the authored moment. Selecting or focusing a project changes the large proof image, evidence line, and action without hiding the complete static project list below it. The default is already visible; motion only clarifies the transition.
+The shared river is the authored interaction. One stable Three.js scene changes material and form as the reader moves from the workshop into the product atlas. It reveals four product tributaries and reconnects them into the roadmap. Semantic HTML carries every title, claim, link, screenshot, and case-study section independently of the canvas.
 
 ## Motion
 
-- Opening: wordmark clips upward once while the proof field opens from black.
+- Opening: a restrained light pass reveals the text-led workshop once; there is no blocking intro.
+- Atlas: the river and product artifacts respond gently to pointer, focus, and native scroll position.
 - Project rail: 240-360ms tonal crossfade and vertical settle with an exponential ease-out.
 - Reduced motion: no clip, scroll-linked movement, or image transition; all content remains visible.
 - No identical reveal animation on every section.
@@ -49,7 +57,20 @@ The homepage project rail is the authored moment. Selecting or focusing a projec
 
 ## Boundaries
 
-- No gradients, decorative glass, AI robots as product imagery, fake terminal code, fake metrics, testimonials, pricing, or service-card grids.
-- The YazeKT avatar is labeled as a brand avatar, not a photograph.
-- Real product screenshots are never altered to invent features or outcomes.
+- No generic purple AI gradients, decorative glass collections, robot hero, fake terminal code, fake metrics, testimonials, pricing, or template-like service-card grids.
+- The YazeKT GitHub character is a small authorship signature only. It is embedded from the original file, labeled as a brand avatar, and never regenerated into a product image.
+- Real product screenshots are direct image assets and are never regenerated, cropped into, stretched, perspective-warped, or altered to invent features or outcomes.
+- Screenshot containers derive their aspect ratio from source dimensions and use contain-fit. Frames adapt to the evidence; evidence never adapts to a decorative frame.
+- The legacy Deepnest captures under the Nestform root reference folder are prohibited portfolio assets. Nestform proof comes from the modern Workshop captures under `Nestform/website/public/assets` or the verified publish checkout.
 - Work Kirsten did not build is excluded from the portfolio and all repository documentation.
+
+## Locked review images
+
+- `design/review/homepage-yaze-product-atlas.png`
+- `design/review/case-study-dlme-signal-river.png`
+- `design/review/case-study-nestform-material-delta.png`
+- `design/review/case-study-atlas-record-terraces.png`
+- `design/review/case-study-pinharbor-local-current.png`
+- `design/review/roadmap-the-work-continues.png`
+
+These are composition contracts, not deployable interface evidence. Production pages use original screenshots and separately generated illustration assets.

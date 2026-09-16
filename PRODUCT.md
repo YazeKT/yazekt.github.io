@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro with TypeScript and selective React islands, statically deployed to GitHub Pages from the private `YazeKT/yazekt.github.io` repository.
+Astro with TypeScript and a selective React island for work-index filtering. The visual direction was informed by current WebGL and Three.js storytelling patterns, but the production site deliberately avoids a heavy decorative 3D runtime. The publication target is GitHub Pages at `https://yazekt.github.io/`; repository visibility and source/publication separation are resolved at the final publication gate.
 
 ## Users
 
@@ -31,7 +31,9 @@ The portfolio is evaluated in browsers on desktop and mobile and is expected to 
 - Primary action: View the work.
 - Secondary action: Contact Kirsten about remote roles.
 - Featured projects: dlME, Nestform, Atlas Reach, and PinHarbor.
-- Archiva may appear only as a privacy-safe secondary project.
+- `/roadmap/` presents Archiva and AI News Studio as current builds with honest Now and Next intentions.
+- Archiva appears only through privacy-safe demo material and never exposes a live client archive.
+- AI News Studio is described as unfinished; unavailable capture, rendering, upload, or publication features are never presented as complete.
 - The site has no CMS, database, analytics, cookies, chatbot, WhatsApp, contact-form storage, public editor, Supabase integration, or Lovable dependency.
 - Repositories Kirsten did not build are excluded from all content, metadata, documentation, and credits.
 - The old `YazeKT/yazemedia` repository and Lovable deployment remain untouched.
@@ -40,13 +42,13 @@ The portfolio is evaluated in browsers on desktop and mobile and is expected to 
 
 - Yaze Media is the primary brand; Kirsten Trimaley is visibly identified as its founder and AI product developer.
 - Voice: direct, grounded, curious, capable, and evidence-led. Never inflate experience, authorship, customers, usage, or results.
-- Visual direction: Proof of Work, using real screenshots, release artifacts, annotations, and design decisions rather than generic AI imagery.
+- Visual direction: The Yaze Product Atlas, using real screenshots, original product-world artwork, release artifacts, annotations, and design decisions rather than generic AI imagery.
 - The official launch URL is `https://yazekt.github.io/`.
 - Public contact information is limited to the verified public email and GitHub profile.
 
 ## Evidence on Hand
 
-- Public YazeKT GitHub profile and portrait.
+- Public YazeKT GitHub profile and brand avatar.
 - Public repositories and release evidence for dlME, Nestform, Atlas Reach, and PinHarbor.
 - Verified local validation records and privacy-safe product screenshots.
 - No testimonials are approved for migration from the old website.
