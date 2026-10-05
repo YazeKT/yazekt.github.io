@@ -5,7 +5,7 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const required = [
   'index.html', 'work/index.html', 'work/dlme/index.html', 'work/nestform/index.html',
-  'work/atlas-reach/index.html', 'work/pinharbor/index.html', 'about/index.html',
+  'work/neardock/index.html', 'work/rastercue/index.html', 'work/atlas-reach/index.html', 'work/pinharbor/index.html', 'about/index.html',
   'resume/index.html', 'roadmap/index.html', '404.html', 'sitemap-index.xml', 'robots.txt',
   'resume/kirsten-trimaley-resume.pdf', 'images/social-card.png'
 ];

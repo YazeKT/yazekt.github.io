@@ -18,3 +18,8 @@
 - Authorship signature: `public/images/brand/yazekt-avatar.jpg`, used small and unmodified.
 
 All public numbers, release states, links, and test counts must be rechecked immediately before publication. No customer, adoption, revenue, performance-improvement, or testimonial claims are approved.
+
+## October 5, 2026 additions
+
+- Neardock: published neardock-v1.0.0 release and README verify local Windows/Android file, message and manual clipboard sharing. Apache 2.0 LocalSend foundation retained; unsigned Windows x64 packages; same-network boundary. Screenshot copied unmodified from its public website assets/windows-send.png.
+- Rastercue: published v1.0.0 release verifies Windows 10/11 x64 local upscaling, explicit Vulkan/CPU choices and unsigned packages. Upscayl foundation retained. Portfolio uses the public brand mark, labelled accurately; existing interface captures include local profile paths and are not reused here.

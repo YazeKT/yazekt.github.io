@@ -8,6 +8,8 @@ const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
   schema: z.object({
     title: z.string().min(2),
+    seoTitle: z.string().optional(),
+    heroCaption: z.string().optional(),
     summary: z.string().min(40),
     outcome: z.string().min(20),
     status: z.string(),

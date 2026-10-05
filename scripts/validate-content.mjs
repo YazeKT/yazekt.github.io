@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const contentDir = path.join(root, 'src/content/projects');
-const required = new Set(['dlme.md', 'nestform.md', 'atlas-reach.md', 'pinharbor.md']);
+const required = new Set(['dlme.md', 'nestform.md', 'atlas-reach.md', 'pinharbor.md', 'neardock.md', 'rastercue.md']);
 const files = fs.readdirSync(contentDir).filter((name) => name.endsWith('.md'));
 const failures = [];
 

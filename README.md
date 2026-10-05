@@ -28,7 +28,7 @@ Run the complete local gate before committing:
 npm run verify
 ```
 
-The gate runs Astro type checking, validates the four project records and their assets, builds the static site, and inspects the final deployment artifact for required routes and excluded content.
+The gate runs Astro type checking, validates the six project records and their assets, builds the static site, and inspects the final deployment artifact for required routes and excluded content.
 
 The generated artwork is illustrative and never substitutes for product evidence. Real app captures must remain uncropped, unstretched, privacy-safe, and at their source aspect ratio.
 

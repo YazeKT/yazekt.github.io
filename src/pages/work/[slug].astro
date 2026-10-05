@@ -15,7 +15,7 @@ const schema = [
   { '@type': 'SoftwareSourceCode', name: `${data.title} source repository`, codeRepository: data.repository, about: { '@id': `${pageUrl}#software` } }
 ];
 ---
-<BaseLayout title={`${data.title} case study — Yaze Media`} description={data.summary} image={`/images/social/${project.id}.webp`} imageAlt={`${data.title} case study by Kirsten Trimaley and Yaze Media`} pageName={data.title} schema={schema}>
+<BaseLayout title={`${data.seoTitle || `${data.title} case study`} — Yaze Media`} description={data.summary} image={['neardock', 'rastercue'].includes(project.id) ? '/images/social-card.png' : `/images/social/${project.id}.webp`} imageAlt={`${data.title} case study by Kirsten Trimaley and Yaze Media`} pageName={data.title} schema={schema}>
   <article>
     <header class="case-opening">
       <img class="case-opening__art" src={data.art} srcset={`${data.art.replace('.webp', '-800.webp')} 800w, ${data.art.replace('.webp', '-1600.webp')} 1600w, ${data.art} 3840w`} sizes="100vw" alt={data.artAlt} width="3840" height="2160" fetchpriority="high" />
@@ -37,8 +37,8 @@ const schema = [
     <dl class="evidence-grid page-shell">{data.evidence.slice(0, 3).map((item) => <div class="evidence-item"><dt>{item.label}</dt><dd>{item.url ? <a href={item.url}>{item.value}</a> : item.value}</dd>{item.note && <small>{item.note}</small>}</div>)}</dl>
 
     <section class="case-proof page-shell">
-      <div class="case-proof__copy"><p class="mono">The real product</p><h2>Built to be used,<br />not just viewed.</h2><p>{data.summary}</p><p class="image-note">Complete application frame · source aspect ratio preserved · privacy-safe data</p></div>
-      <figure class="screen-frame"><img src={data.hero} alt={data.heroAlt} width={data.heroWidth} height={data.heroHeight} /><figcaption>{data.title} interface evidence</figcaption></figure>
+      <div class="case-proof__copy"><p class="mono">The real product</p><h2>Built to be used,<br />not just viewed.</h2><p>{data.summary}</p><p class="image-note">{data.heroCaption || 'Complete application frame · source aspect ratio preserved · privacy-safe data'}</p></div>
+      <figure class="screen-frame"><img src={data.hero} alt={data.heroAlt} width={data.heroWidth} height={data.heroHeight} /><figcaption>{data.heroCaption || `${data.title} interface evidence`}</figcaption></figure>
     </section>
 
     <div class="case-body page-shell">
@@ -50,7 +50,7 @@ const schema = [
         <section class="case-section"><h2>Decisions</h2><ul>{data.decisions.map((item) => <li>{item}</li>)}</ul></section>
         <section class="case-section"><h2>Proof of work</h2><ul>{data.results.map((item) => <li>{item}</li>)}</ul></section>
         {data.attribution && <p class="attribution"><strong>Foundation and attribution:</strong> {data.attribution}</p>}
-        <section class="case-section case-next"><h2>What comes next</h2><div><p>{data.next}</p><a class="button" href={`mailto:${site.email}?subject=${encodeURIComponent(`Remote opportunity after viewing ${data.title}`)}`}>Talk with me about this work <span aria-hidden="true">↗</span></a></div></section>
+        <section class="case-section case-next"><h2>What comes next</h2><div><p>{data.next}</p><a class="button" href={`mailto:${site.email}?subject=${encodeURIComponent(`Project enquiry after viewing ${data.title}`)}`}>Discuss a project <span aria-hidden="true">↗</span></a></div></section>
       </div>
     </div>
   </article>

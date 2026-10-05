@@ -5,10 +5,10 @@ import WorkIndex from '../../components/WorkIndex';
 const projects = (await getCollection('projects')).sort((a, b) => a.data.featuredOrder - b.data.featuredOrder);
 const items = projects.map(({ id, data }) => ({ slug: id, featuredOrder: data.featuredOrder, title: data.title, summary: data.summary, platform: data.platform, status: data.status, art: data.art, artAlt: data.artAlt, hero: data.hero, heroAlt: data.heroAlt, heroWidth: data.heroWidth, heroHeight: data.heroHeight }));
 ---
-<BaseLayout title="Work — Yaze Media" description="Case studies for dlME, Nestform, Atlas Reach, and PinHarbor by Yaze Media and Kirsten Trimaley." pageName="Work">
+<BaseLayout title="Windows apps and product case studies — Yaze Media" description="Explore Windows and Android product case studies: dlME, Nestform, Atlas Reach, PinHarbor, Neardock and Rastercue by Kirsten Trimaley." pageName="Work">
   <section class="page-hero page-shell">
     <h1>Work that holds up under inspection.</h1>
-    <p>Four practical products. Each case study separates the problem, the contribution, the inherited foundation, and the proof.</p>
+    <p>{projects.length} practical products. Each case study separates the problem, the contribution, the inherited foundation, and the proof.</p>
     <div class="page-meta"><span>Windows + web</span><span>Design + development</span><span>Evidence-led</span></div>
   </section>
   <div class="page-shell"><WorkIndex projects={items} client:visible /></div>

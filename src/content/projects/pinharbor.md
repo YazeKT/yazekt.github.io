@@ -1,5 +1,6 @@
 ---
 title: "PinHarbor"
+seoTitle: "PinHarbor: local business collector case study"
 summary: "A Windows-local Google Maps business collector with completion-driven runs, honest live progress, and focused CSV exports."
 outcome: "A Docker-free Go and Playwright workflow with clearer presets, resilient supervision, local job history, and truthful telemetry."
 status: "Public source"

@@ -1,5 +1,6 @@
 ---
 title: "Nestform"
+seoTitle: "Nestform: Windows nesting software case study"
 summary: "A modern Windows nesting workspace for laser cutting and CNC, built around the preserved Deepnest engine."
 outcome: "A clearer Electron workflow with explicit physical units, SVG and DXF handling, and exact round-trip validation."
 status: "Public project + local approval build"

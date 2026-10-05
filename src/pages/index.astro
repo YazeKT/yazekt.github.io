@@ -12,11 +12,11 @@ const entries = (await getCollection('projects')).sort((a, b) => a.data.featured
       <h1>AI-assisted products,<br /><em>shaped by human judgment.</em></h1>
       <p class="hero-deck">Designed and shipped by Kirsten Trimaley. Practical Windows and web products built from real workflow problems, careful product decisions, and proof that can be inspected.</p>
       <div class="hero-actions"><a class="button" href="#selected-work">View the work <span aria-hidden="true">↓</span></a><a class="button button-dark" href={`mailto:${site.email}?subject=Remote%20opportunity%20for%20Kirsten%20Trimaley`}>Discuss a remote role</a></div>
-    </div>
-    <div class="workshop-hero__proof"><p>About ten years of visual judgment</p><p>4 documented product stories</p><p>East London → Remote</p></div>
+    <a class="text-link" href={`mailto:${site.email}?subject=Project%20enquiry%20for%20Yaze%20Media`}>Discuss a project ↗</a></div>
+    <div class="workshop-hero__proof"><p>About ten years of visual judgment</p><p>{entries.length} documented product stories</p><p>East London → Remote</p></div>
   </section>
   <section class="atlas-intro page-shell" id="selected-work">
-    <div><p class="mono">The Yaze Product Atlas</p><h2>Four products.<br />One flowing practice.</h2></div>
+    <div><p class="mono">The Yaze Product Atlas</p><h2>Practical products.<br />One flowing practice.</h2></div>
     <p>Each world begins with a messy operator problem. Follow the cobalt current through the decisions, the real interface, and the evidence behind what shipped.</p>
   </section>
   <figure class="atlas-art page-shell"><img src="/images/art/homepage-product-atlas.webp" srcset="/images/art/homepage-product-atlas-800.webp 800w, /images/art/homepage-product-atlas-1600.webp 1600w, /images/art/homepage-product-atlas.webp 3840w" sizes="100vw" alt="A carved-paper product atlas connected by a luminous cobalt river, representing four distinct Yaze Media product worlds" width="3840" height="2160" loading="lazy" /><figcaption>Illustrative product atlas — conceptual artwork, not a software interface.</figcaption></figure>

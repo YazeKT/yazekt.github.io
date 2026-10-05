@@ -1,5 +1,6 @@
 ---
 title: "Atlas Reach"
+seoTitle: "Atlas Reach: local Windows CRM case study"
 summary: "A compact, local-first lead CRM for importing approved spreadsheets, managing sales activity, and exporting clean workbooks."
 outcome: "A dense Windows workspace with duplicate-aware imports, lead editing, local analytics, pagination, exports, and backups."
 status: "v1.3.0 public release"

@@ -1,5 +1,6 @@
 ---
 title: "dlME"
+seoTitle: "dlME: Windows media downloader case study"
 summary: "A local Windows media downloader that turns a pasted public-media URL into a clear, inspectable download workflow."
 outcome: "A compact Electron product with resilient analysis, local files, explicit formats, and release-grade verification."
 status: "Public open beta"
