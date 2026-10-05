@@ -23,6 +23,13 @@ walk(dist);
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, 'utf8');
+  // Google's ownership token is a plain-text response, not a website page.
+  if (path.relative(dist, file) === 'google47698b0716f33c7d.html') {
+    if (html.trim() !== 'google-site-verification: google47698b0716f33c7d.html') {
+      failures.push('Google ownership verification file has incorrect contents');
+    }
+    continue;
+  }
   if (/agency[ -]agents/i.test(html)) failures.push(`${path.relative(dist, file)}: excluded project name found`);
   if (/lovable|supabase|whatsapp|067\s*096\s*9303/i.test(html)) failures.push(`${path.relative(dist, file)}: retired service or contact found`);
   if (!/<main\b/i.test(html) || !/<title>[^<]+<\/title>/i.test(html)) failures.push(`${path.relative(dist, file)}: main landmark or title missing`);
